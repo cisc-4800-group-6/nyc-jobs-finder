@@ -1,3 +1,17 @@
+# NYC Jobs Finder Frontend - CISC 4800 Group 6
+
+This is the frontend for the NYC Jobs Finder app.\
+See it live: [https://nyc-jobs-finder.netlify.app](https://nyc-jobs-finder.netlify.app/)
+
+Powered by:
+
+- React
+- JavaScript
+- HTML
+- CSS
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

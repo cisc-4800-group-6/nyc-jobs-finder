@@ -12,35 +12,43 @@ const Home = () => {
       <h1>Job Search NYC</h1>
       <div>
         <h2>Search Jobs</h2>
-        <div className="Home-search">
-          <input
-            type="text"
-            name="search-jobs"
-            id="search-jobs"
-            placeholder="Type to search..."
-            onChange={(event) => setSearchQuery(event.target.value)}
-          />
-          <button
-            type="submit"
-            className="button"
-            onClick={() => {
+        <div>
+          <form
+            className="Home-search"
+            onSubmit={() => {
               // Parse search query into query string for url
               const qsValue = queryString.stringify({
                 q: searchQuery,
               });
 
               // Send search query to job search page
-              history.push(`/jobs/${qsValue}?${qsValue}`);
+              history.push(`/jobs/search?${qsValue}`);
             }}
           >
-            Search
-          </button>
+            <input
+              type="text"
+              name="search-jobs"
+              id="search-jobs"
+              placeholder="Type to search..."
+              onChange={(event) => setSearchQuery(event.target.value)}
+              required
+            />
+            <button type="submit" className="button">
+              Search
+            </button>
+          </form>
         </div>
       </div>
+
       <div className="Home-buttons">
+        <Link to="/jobs" className="button">
+          Browse Jobs
+        </Link>
+
         <Link to="/jobs/create" className="button">
           Post a Job
         </Link>
+
         <Link to="/jobs/saved" className="button">
           Saved Jobs
         </Link>

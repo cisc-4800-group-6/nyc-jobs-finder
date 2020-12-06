@@ -32,6 +32,6 @@
   flex-direction: column;
 }
 
-.Home-buttons a:last-child {
+.Home-buttons a:not(:first-child) {
   margin-top: 1rem;
 }

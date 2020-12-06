@@ -1,13 +1,27 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./views/Home/Home";
+import Jobs from "./views/Jobs/Jobs";
 import JobSearch from "./views/JobSearch/JobSearch";
+// import SavedJobs from "./views/SavedJobs/SavedJobs";
+// import PostJob from "./views/PostJob/PostJob";
+// import JobPage from "./views/JobPage/JobPage";
 
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/jobs">
+      <Route path="/job/:id">{/* <JobPage /> */}</Route>
+
+      <Route path="/jobs/post">{/* <PostJob /> */}</Route>
+
+      <Route path="/jobs/saved">{/* <SavedJobs /> */}</Route>
+
+      <Route path="/jobs/search">
         <JobSearch />
+      </Route>
+
+      <Route path="/jobs">
+        <Jobs />
       </Route>
 
       <Route exact path="/">
