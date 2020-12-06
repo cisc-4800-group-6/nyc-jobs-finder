@@ -1,22 +1,18 @@
 import React from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./routes";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hello World</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <Router>
+          <Routes />
+        </Router>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
