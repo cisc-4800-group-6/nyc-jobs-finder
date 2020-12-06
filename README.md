@@ -10,6 +10,18 @@ Powered by:
 - HTML
 - CSS
 
+## Setting up the Development Environment
+
+1. Run `npm install`
+2. Run `npm start`
+3. Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Building for Production
+
+1. Run `npm install` if you haven't already done so.
+2. Run `npm build`
+3. The build output can be found in the `/build` folder.
+
 ---
 
 # Getting Started with Create React App
