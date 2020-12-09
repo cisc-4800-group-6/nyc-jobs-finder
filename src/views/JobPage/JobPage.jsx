@@ -20,9 +20,9 @@ const JobPage = () => {
   // This "useEffect" hook runs when the component (in this case, the entire page) loads.
   useEffect(() => {
     // Compute Job ID
-    console.log(location.pathname);
+    const jobId = location.pathname.split("/")[2];
 
-    // Step 1: Get jobs from the backend API
+    // TODO: Get jobs from the backend API
     fetch(`${API_URL}/job/${jobId}`)
       .then((res) => res.json())
       .then((data) => {
