@@ -5,12 +5,14 @@ import Jobs from "./views/Jobs/Jobs";
 import JobSearch from "./views/JobSearch/JobSearch";
 // import SavedJobs from "./views/SavedJobs/SavedJobs";
 // import PostJob from "./views/PostJob/PostJob";
-// import JobPage from "./views/JobPage/JobPage";
+import JobPage from "./views/JobPage/JobPage";
 
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/job/:id">{/* <JobPage /> */}</Route>
+      <Route path="/job/:id">
+        <JobPage />
+      </Route>
 
       <Route path="/jobs/post">{/* <PostJob /> */}</Route>
 
