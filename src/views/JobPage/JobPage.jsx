@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { hasAValue } from "../../Helper";
 import { API_URL } from "../../index";
 import "./JobPage.css";
 
@@ -15,6 +16,7 @@ const JobPage = () => {
 
   const [jobData, setJobData] = useState({
     // HINT: Get the job data from the backend and set the received object here using setJobData()
+  
   });
 
   // This "useEffect" hook runs when the component (in this case, the entire page) loads.
@@ -27,6 +29,8 @@ const JobPage = () => {
       .then((res) => res.json())
       .then((data) => {
         // TODO: Do stuff with the data here and set the data in jobData
+        setJobData(data);
+        
       })
       .catch((err) => {
         setHasErrored(true);
@@ -46,20 +50,21 @@ const JobPage = () => {
         <div>
           {/* Set all this data in state and dynamically display it */}
           {/* HINT: After setting the job data, use {jobdata['Business Title']} between HTML tags to get data from the object */}
-          <h2>Job Title (Business Title)</h2>
-          <h3>Agency</h3>
-          <p>Location</p>
-          <p>Full Time/Part Time</p>
-          <p>Hours/Shift</p>
-          <p>Posting Date</p>
+          {/* If it has a value from data then display the data but if not then display N/A */}
+          <h2>Job Title (Business Title): {hasAValue(jobData["Business Title"]) ? jobData["Business Title"] : 'N/A'}</h2>
+          <h3>Agency: {hasAValue(jobData.Agency) ? jobData.Agency : 'N/A'}</h3>
+          <p>Location: {hasAValue(jobData["Work Location"]) ? jobData["Work Location"] : 'N/A'}</p>
+          <p>Full Time/Part Time: {hasAValue(jobData["Full-Time/Part-Time indicator"]) ? jobData["Full-Time/Part-Time indicator"] : 'N/A'}</p>
+          <p>Hours/Shift: {hasAValue(jobData.["Hours/Shift"]) ? jobData.["Hours/Shift"] : 'N/A'}</p>
+          <p>Posting Date: {hasAValue(jobData["Posting Date"]) ? jobData["Posting Date"] : 'N/A'}</p>
 
-          <p>Job Description</p>
-          <p>Minimum Qual Requirements</p>
-          <p>Preferred Skills</p>
-          <p>Additional Information</p>
+          <p>Job Description: Posting Date: {hasAValue(jobData["Job Description"]) ? jobData["Job Description"] : 'N/A'}</p>
+          <p>Minimum Qual Requirements: Posting Date: {hasAValue(jobData["Minimum Qual Requirements"]) ? jobData["Minimum Qual Requirements"] : 'N/A'}</p>
+          <p>Preferred Skills: {hasAValue(jobData["Preferred Skills"]) ? jobData["Preferred Skills"] : 'N/A'}</p>
+          <p>Additional Information: {hasAValue(jobData["Additional Information"]) ? jobData["Additional Information"] : 'N/A'}</p>
 
-          <p>Recruitment Contact</p>
-          <p>To Apply</p>
+          <p>Recruitment Contact: {hasAValue(jobData["Recruitment Contact"]) ? jobData["Recruitment Contact"] : 'N/A'}</p>
+          <p>To Apply: {hasAValue(jobData["To Apply"]) ? jobData["To Apply"] : 'N/A'}</p>
         </div>
       )}
       {hasErrored && (
