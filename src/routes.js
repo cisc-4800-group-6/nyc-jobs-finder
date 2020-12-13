@@ -4,8 +4,8 @@ import Home from "./views/Home/Home";
 import Jobs from "./views/Jobs/Jobs";
 import JobSearch from "./views/JobSearch/JobSearch";
 // import SavedJobs from "./views/SavedJobs/SavedJobs";
-// import PostJob from "./views/PostJob/PostJob";
 import JobPage from "./views/JobPage/JobPage";
+import PostJob from "./views/PostJob/PostJob";
 
 const Routes = () => {
   return (
@@ -14,7 +14,9 @@ const Routes = () => {
         <JobPage />
       </Route>
 
-      <Route path="/jobs/post">{/* <PostJob /> */}</Route>
+      <Route path="/jobs/create">
+        <PostJob />
+      </Route>
 
       <Route path="/jobs/saved">{/* <SavedJobs /> */}</Route>
 
