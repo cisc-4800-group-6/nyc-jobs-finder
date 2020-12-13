@@ -52,7 +52,7 @@ const PostJob = () => {
     return (
         <div className="Postjob">
             <h1>Post a Job</h1>
-            <form>
+            <form className="postForm">
                 <div>
                     <label className="labeName" htmlFor="businessTitle">Business Title*: </label>
                     <input
