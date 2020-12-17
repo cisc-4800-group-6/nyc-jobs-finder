@@ -40,6 +40,8 @@ const JobPage = () => {
   // The component (page, in this case) contents.
   return (
     <div className="JobSearch">
+      <div id="backtop"><a href="#">TOP</a></div>
+      
       {/* Render all the created job components after creating all the jobs */}
       {isLoading ? (
         <p>Loading...</p>
