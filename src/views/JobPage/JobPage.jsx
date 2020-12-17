@@ -49,69 +49,82 @@ const JobPage = () => {
           {/* HINT: After setting the job data, use {jobdata['Business Title']} between HTML tags to get data from the object */}
           {/* If it has a value from data then display the data but if not then display N/A */}
           <h2>
-            Job Title (Business Title):{" "}
             {hasAValue(jobData["Business Title"])
               ? jobData["Business Title"]
               : "N/A"}
           </h2>
-          <h3>Agency: {hasAValue(jobData.Agency) ? jobData.Agency : "N/A"}</h3>
+          <h3>{hasAValue(jobData.Agency) ? jobData.Agency : "N/A"}</h3>
           <p>
-            Location:{" "}
+            <strong>Location: </strong>
             {hasAValue(jobData["Work Location"])
               ? jobData["Work Location"]
               : "N/A"}
           </p>
           <p>
-            Full Time/Part Time:{" "}
+            <strong>Full Time/Part Time: </strong>
             {hasAValue(jobData["Full-Time/Part-Time indicator"])
               ? jobData["Full-Time/Part-Time indicator"]
               : "N/A"}
           </p>
           <p>
-            Hours/Shift:{" "}
+            <strong>Hours/Shift: </strong>
             {hasAValue(jobData["Hours/Shift"]) ? jobData["Hours/Shift"] : "N/A"}
           </p>
           <p>
-            Posting Date:{" "}
+            <strong>Posting Date: </strong>
             {hasAValue(jobData["Posting Date"])
               ? jobData["Posting Date"]
               : "N/A"}
           </p>
 
           <p>
-            Job Description: Posting Date:{" "}
-            {hasAValue(jobData["Job Description"])
-              ? jobData["Job Description"]
-              : "N/A"}
-          </p>
-          <p>
-            Minimum Qual Requirements: Posting Date:{" "}
-            {hasAValue(jobData["Minimum Qual Requirements"])
-              ? jobData["Minimum Qual Requirements"]
-              : "N/A"}
-          </p>
-          <p>
-            Preferred Skills:{" "}
-            {hasAValue(jobData["Preferred Skills"])
-              ? jobData["Preferred Skills"]
-              : "N/A"}
-          </p>
-          <p>
-            Additional Information:{" "}
-            {hasAValue(jobData["Additional Information"])
-              ? jobData["Additional Information"]
-              : "N/A"}
-          </p>
-
-          <p>
-            Recruitment Contact:{" "}
+            <strong>Recruitment Contact: </strong>
             {hasAValue(jobData["Recruitment Contact"])
               ? jobData["Recruitment Contact"]
               : "N/A"}
           </p>
+
+          <br />
+
           <p>
-            To Apply:{" "}
+            <strong>Apply: </strong>
             {hasAValue(jobData["To Apply"]) ? jobData["To Apply"] : "N/A"}
+          </p>
+
+          <br />
+
+          <h3>Job Description:</h3>
+          <p style={{ textAlign: "left" }}>
+            {hasAValue(jobData["Job Description"])
+              ? jobData["Job Description"]
+              : "N/A"}
+          </p>
+
+          <br />
+
+          <h3>Minimum Qual Requirements:</h3>
+          <p style={{ textAlign: "left" }}>
+            {hasAValue(jobData["Minimum Qual Requirements"])
+              ? jobData["Minimum Qual Requirements"]
+              : "N/A"}
+          </p>
+
+          <br />
+
+          <h3>Preferred Skills:</h3>
+          <p style={{ textAlign: "left" }}>
+            {hasAValue(jobData["Preferred Skills"])
+              ? jobData["Preferred Skills"]
+              : "N/A"}
+          </p>
+
+          <br />
+
+          <h3>Additional Information:</h3>
+          <p style={{ textAlign: "left" }}>
+            {hasAValue(jobData["Additional Information"])
+              ? jobData["Additional Information"]
+              : "N/A"}
           </p>
         </div>
       )}
