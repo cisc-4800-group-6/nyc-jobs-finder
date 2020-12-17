@@ -1,19 +1,41 @@
 .postForm{
     display:block;
     margin: 0 auto;
+    background: #e4f7fd61;
+    border: 2px solid #0786ada1;
+    border-radius: 8px;
+    width: 800px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: bold;
 }
 
 #businessTitle, #agency,#location, 
 #fpTime, #hours, #postDate, #jobDesc, #miniQual,
-#prefSkill, #addInfo, #rContact input[type=text]{
-    
-    width:50%;
+#prefSkill, #addInfo, #rContact{
+    margin-top: 10px;
+    width:600px;
     padding: 12px 20px;
-
+    margin-left: 0 auto;
+    border: 2px solid;
+    border-radius: 2px;
+    border-color: #0786ada1;
 }
 
+.labeName{
+    display: flex;
+    flex-direction: column;
+}
 
-
-
-
+.postButton{
+    margin-top: 20px;
+    background-color: white;
+    border: 2px solid #0786ada1;
+    border-radius: 2px;
+    width: 120px;
+    height: 35px;
+    font-size: 1.4em;
+}
 
