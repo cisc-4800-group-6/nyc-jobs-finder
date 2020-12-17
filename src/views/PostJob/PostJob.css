@@ -1,19 +1,19 @@
-.postForm{
-    display:block;
-    margin: 0 auto;
+.postForm {
+  display: block;
+  margin: 0 auto;
 }
 
-#businessTitle, #agency,#location, 
-#fpTime, #hours, #postDate, #jobDesc, #miniQual,
-#prefSkill, #addInfo, #rContact input[type=text]{
-    
-    width:50%;
-    padding: 12px 20px;
-
+#businessTitle,
+#agency,
+#location,
+#fpTime,
+#hours,
+#postDate,
+#jobDesc,
+#miniQual,
+#prefSkill,
+#addInfo,
+#rContact {
+  width: 50%;
+  padding: 12px 20px;
 }
-
-
-
-
-
-

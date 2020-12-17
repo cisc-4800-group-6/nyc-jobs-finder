@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import queryString from "query-string";
+import FloatingBack from "../../components/FloatingBack/FloatingBack";
 import { API_URL } from "../../index";
 import "./JobSearch.css";
 
@@ -51,6 +52,8 @@ const JobSearch = () => {
   // The component (page, in this case) contents.
   return (
     <div className="JobSearch">
+      <FloatingBack />
+
       <h1>Results for &quot;{searchQuery}&quot;</h1>
       <div>
         {/* Render all the created job components after creating all the jobs */}

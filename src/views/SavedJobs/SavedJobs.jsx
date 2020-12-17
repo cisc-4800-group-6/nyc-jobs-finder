@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FloatingBack from "../../components/FloatingBack/FloatingBack";
 import { API_URL } from "../../index";
-import "./Jobs.css";
+import "./SavedJobs.css";
 
-const Jobs = () => {
+const SavedJobs = () => {
   const [jobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasErrored, setHasErrored] = useState(false);
@@ -12,7 +12,7 @@ const Jobs = () => {
 
   // Get featured jobs from the server when the page loads
   useEffect(() => {
-    fetch(`${API_URL}/jobs`)
+    fetch(`${API_URL}/jobs/saved`)
       .then((res) => res.json())
       .then((data) => {
         // Create a new component for each job and add it to the array of jobs components state
@@ -39,15 +39,23 @@ const Jobs = () => {
     <div className="JobSearch">
       <FloatingBack />
 
-      <h1>Featured Jobs</h1>
+      <h1>Saved Jobs</h1>
 
       {/* Load jobs once the API responds */}
-      {isLoading ? <p>Loading...</p> : jobs}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : jobs.length > 0 ? (
+        jobs
+      ) : (
+        <p>
+          No saved jobs were found. Visit a job page to save a job for later!
+        </p>
+      )}
 
       {/* Display error message if an error occurred */}
       {hasErrored && (
         <p style={{ color: "red", fontSize: "2rem" }}>
-          Could not load featured jobs!
+          Could not load saved jobs!
           <br />
           <strong>{errorMessage}</strong>
         </p>
@@ -56,4 +64,4 @@ const Jobs = () => {
   );
 };
 
-export default Jobs;
+export default SavedJobs;

@@ -3,6 +3,8 @@
 }
 
 .button {
+  min-width: 10rem;
+  max-width: 15rem;
   display: block;
   padding: 1rem;
   background-color: #ccff8b;

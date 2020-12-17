@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
+import FloatingBack from "../../components/FloatingBack/FloatingBack";
 import { hasAValue } from "../../Helper";
 import { API_URL } from "../../index";
 import "./JobPage.css";
 
 const JobPage = () => {
+  const history = useHistory();
   const location = useLocation();
 
   // Component State
@@ -13,22 +15,32 @@ const JobPage = () => {
   const [hasErrored, setHasErrored] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [jobData, setJobData] = useState({
-    // HINT: Get the job data from the backend and set the received object here using setJobData()
-  });
+  const [jobData, setJobData] = useState({});
+  const [jobSaved, setJobSaved] = useState(true);
 
   // This "useEffect" hook runs when the component (in this case, the entire page) loads.
   useEffect(() => {
     // Compute Job ID
     const jobId = location.pathname.split("/")[2];
 
-    // TODO: Get jobs from the backend API
     fetch(`${API_URL}/job/${jobId}`)
       .then((res) => res.json())
       .then((data) => {
-        // TODO: Do stuff with the data here and set the data in jobData
         setJobData(data);
-        setIsLoading(false);
+
+        // Check if job is saved
+        fetch(`${API_URL}/job/${jobId}/saved`)
+          .then((res) => res.json())
+          .then((jobIsSaved) => {
+            console.log(jobIsSaved);
+            setJobSaved(jobIsSaved);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            setHasErrored(true);
+            setErrorMessage(err.toString());
+            setIsLoading(false);
+          });
       })
       .catch((err) => {
         setHasErrored(true);
@@ -40,6 +52,8 @@ const JobPage = () => {
   // The component (page, in this case) contents.
   return (
     <div className="JobSearch">
+      <FloatingBack style={{ marginTop: "1.3rem" }} />
+
       {/* Render all the created job components after creating all the jobs */}
       {isLoading ? (
         <p>Loading...</p>
@@ -48,12 +62,15 @@ const JobPage = () => {
           {/* Set all this data in state and dynamically display it */}
           {/* HINT: After setting the job data, use {jobdata['Business Title']} between HTML tags to get data from the object */}
           {/* If it has a value from data then display the data but if not then display N/A */}
-          <h2>
+          <h2 style={{ fontSize: "2rem", marginBottom: 0 }}>
             {hasAValue(jobData["Business Title"])
               ? jobData["Business Title"]
               : "N/A"}
           </h2>
-          <h3>{hasAValue(jobData.Agency) ? jobData.Agency : "N/A"}</h3>
+          <h3 style={{ marginTop: "0.5rem", marginBottom: "2rem" }}>
+            {hasAValue(jobData.Agency) ? jobData.Agency : "N/A"}
+          </h3>
+
           <p>
             <strong>Location: </strong>
             {hasAValue(jobData["Work Location"])
@@ -76,7 +93,6 @@ const JobPage = () => {
               ? jobData["Posting Date"]
               : "N/A"}
           </p>
-
           <p>
             <strong>Recruitment Contact: </strong>
             {hasAValue(jobData["Recruitment Contact"])
@@ -89,6 +105,11 @@ const JobPage = () => {
           <p>
             <strong>Apply: </strong>
             {hasAValue(jobData["To Apply"]) ? jobData["To Apply"] : "N/A"}
+            <br />
+            <em style={{ display: "block", marginTop: "0.25rem" }}>
+              If there is no link or button here, please search for the position
+              online.
+            </em>
           </p>
 
           <br />
@@ -126,11 +147,124 @@ const JobPage = () => {
               ? jobData["Additional Information"]
               : "N/A"}
           </p>
+
+          {/* Job Post Actions */}
+          {/*
+              Unfortunately, creating a stateful React form to pre-fill large amounts
+              of form data to update a job posting is extremely complicated and 
+              would probably require the use of an external library like Formik
+              to handle and would not be possible with the limited time we have left.
+              We hope you understand!
+          */}
+          <div>
+            {jobSaved ? (
+              // Unsave Job Button
+              <button
+                className="button"
+                style={{
+                  margin: "3rem auto 0",
+                  padding: "1rem 2rem",
+                  fontSize: "1.25rem",
+                  backgroundColor: "orange",
+                  border: "1px solid orange",
+                }}
+                onClick={() => {
+                  fetch(`${API_URL}/job/${jobData["Job ID"]}/save`, {
+                    method: "DELETE",
+                  })
+                    .then((res) => {
+                      if (res.status === 200) {
+                        setJobSaved(false);
+                        alert("Unsaved job successfully.");
+                      } else {
+                        setHasErrored(true);
+                        setErrorMessage("Could not save job.");
+                      }
+                    })
+                    .catch((err) => {
+                      setHasErrored(true);
+                      setErrorMessage(err.toString());
+                    });
+                }}
+              >
+                Unsave Job
+              </button>
+            ) : (
+              // Save Job Button
+              <button
+                className="button"
+                style={{
+                  margin: "3rem auto 0",
+                  padding: "1rem 2rem",
+                  fontSize: "1.25rem",
+                }}
+                onClick={() => {
+                  fetch(`${API_URL}/job/${jobData["Job ID"]}/save`, {
+                    method: "POST",
+                    body: JSON.stringify(jobData),
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  })
+                    .then((res) => {
+                      if (res.status === 200) {
+                        setJobSaved(true);
+                        alert("Saved job successfully.");
+                      } else {
+                        setHasErrored(true);
+                        setErrorMessage("Could not save job.");
+                      }
+                    })
+                    .catch((err) => {
+                      setHasErrored(true);
+                      setErrorMessage(err.toString());
+                    });
+                }}
+              >
+                Save Job
+              </button>
+            )}
+
+            <br />
+
+            {/* Delete Job Button */}
+            <button
+              className="button"
+              style={{
+                margin: "1rem auto 5rem",
+                maxWidth: "25rem",
+                padding: "1rem 2rem",
+                fontSize: "1.25rem",
+                backgroundColor: "lightcoral",
+                border: "1px solid lightcoral",
+              }}
+              onClick={() => {
+                fetch(`${API_URL}/job/${jobData["Job ID"]}`, {
+                  method: "DELETE",
+                })
+                  .then((res) => {
+                    if (res.status === 200) {
+                      history.push("/");
+                    } else {
+                      setHasErrored(true);
+                      setErrorMessage("Could not delete job posting.");
+                    }
+                  })
+                  .catch((err) => {
+                    setHasErrored(true);
+                    setErrorMessage(err.toString());
+                  });
+              }}
+            >
+              Delete Job Posting
+            </button>
+          </div>
         </div>
       )}
+
       {hasErrored && (
         <p style={{ color: "red", fontSize: "2rem" }}>
-          Could not get job data!
+          Error:
           <br />
           <strong>{errorMessage}</strong>
         </p>
