@@ -1,6 +1,18 @@
 .JobDetail{
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: #e4f7fd61;
+	border: 2px solid #0786ada1;
+	border-radius: 8px;
+}
+
+.detail{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 50px;
 }
 
 #backtop a {
