@@ -51,6 +51,8 @@ const JobSearch = () => {
   // The component (page, in this case) contents.
   return (
     <div className="JobSearch">
+      <div id="backtop"><a href="#">TOP</a></div>
+      
       <h1>Results for &quot;{searchQuery}&quot;</h1>
       <div>
         <ul className="JobList">
