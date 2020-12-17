@@ -1,7 +1,6 @@
 .JobSearch {
   padding: 1rem;
   margin: 0 auto;
-  max-width: 1280px;
 }
 
 article.job {
@@ -12,4 +11,28 @@ article.job {
   background-color: #fff;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   text-align: left;
+  color: black;
+}
+
+.JobList{
+  background: #e4f7fd61;
+  border: 2px solid #0786ada1;
+  border-radius: 8px;
+  width: 95%;
+  margin: 0 auto;
+}
+ul{
+  padding: 10;
+  overflow: hidden;
+  margin-right: -20px;
+  margin-bottom: -20px;
+  margin-top: 0;
+  list-style:none
+}
+.JobList li{
+  float: left;
+  width: 350px;
+  height: 200px;
+  margin-right: 60px;
+  margin-bottom: 20px;
 }
