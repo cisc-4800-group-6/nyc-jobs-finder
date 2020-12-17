@@ -53,21 +53,23 @@ const JobSearch = () => {
     <div className="JobSearch">
       <h1>Results for &quot;{searchQuery}&quot;</h1>
       <div>
-        {/* Render all the created job components after creating all the jobs */}
-        {isLoading ? (
-          <p>Searching for jobs...</p>
-        ) : jobsComponents.length > 0 ? (
-          jobsComponents
-        ) : (
-          `No jobs were found in the database for "${searchQuery}".`
-        )}
-        {hasErrored && (
-          <p style={{ color: "red", fontSize: "2rem" }}>
-            Could not search for jobs!
-            <br />
-            <strong>{errorMessage}</strong>
-          </p>
-        )}
+        <ul className="JobList">
+          {/* Render all the created job components after creating all the jobs */}
+          {isLoading ? (
+            <p>Searching for jobs...</p>
+          ) : jobsComponents.length > 0 ? (
+            jobsComponents
+          ) : (
+            `No jobs were found in the database for "${searchQuery}".`
+          )}
+          {hasErrored && (
+            <p style={{ color: "red", fontSize: "2rem" }}>
+              Could not search for jobs!
+              <br />
+              <strong>{errorMessage}</strong>
+            </p>
+          )}
+        </ul>
       </div>
     </div>
   );
