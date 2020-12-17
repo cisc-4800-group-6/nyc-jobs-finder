@@ -1,5 +1,11 @@
+html{
+	background-color: #70bdd7;
+}
+
 .Home {
   padding: 2rem;
+  height: 60rem;
+  background-image: url("../../assets/home.jpg");
 }
 
 .Home-search {
