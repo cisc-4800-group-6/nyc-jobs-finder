@@ -219,7 +219,7 @@ const PostJob = () => {
         <div>
           <button
             type="submit"
-            className="button"
+            className="postButton"
             style={{ margin: "2rem auto 0", fontSize: "1.25rem" }}
           >
             Post Job

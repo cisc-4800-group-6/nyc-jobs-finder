@@ -31,13 +31,15 @@ const JobSearch = () => {
         // Create a new component for each job and add it to the array of jobs components state
         data.forEach((job) => {
           jobsComponents.push(
-            <Link to={`/job/${job["Job ID"]}`}>
-              <article className="job">
-                <h3>{job["Business Title"]}</h3>
-                <p>{job["Agency"]}</p>
-                <p>Job ID: {job["Job ID"]}</p>
-              </article>
-            </Link>
+            <li>
+              <Link to={`/job/${job["Job ID"]}`}>
+                <article className="job">
+                  <h3>{job["Business Title"]}</h3>
+                  <p>{job["Agency"]}</p>
+                  <p>Job ID: {job["Job ID"]}</p>
+                </article>
+              </Link>
+            </li>
           );
         });
 
@@ -54,23 +56,27 @@ const JobSearch = () => {
     <div className="JobSearch">
       <FloatingBack />
 
+      <div id="backtop"><a href="#">TOP</a></div>
+      
       <h1>Results for &quot;{searchQuery}&quot;</h1>
       <div>
-        {/* Render all the created job components after creating all the jobs */}
-        {isLoading ? (
-          <p>Searching for jobs...</p>
-        ) : jobsComponents.length > 0 ? (
-          jobsComponents
-        ) : (
-          `No jobs were found in the database for "${searchQuery}".`
-        )}
-        {hasErrored && (
-          <p style={{ color: "red", fontSize: "2rem" }}>
-            Could not search for jobs!
-            <br />
-            <strong>{errorMessage}</strong>
-          </p>
-        )}
+        <ul className="JobList">
+          {/* Render all the created job components after creating all the jobs */}
+          {isLoading ? (
+            <p>Searching for jobs...</p>
+          ) : jobsComponents.length > 0 ? (
+            jobsComponents
+          ) : (
+            `No jobs were found in the database for "${searchQuery}".`
+          )}
+          {hasErrored && (
+            <p style={{ color: "red", fontSize: "2rem" }}>
+              Could not search for jobs!
+              <br />
+              <strong>{errorMessage}</strong>
+            </p>
+          )}
+        </ul>
       </div>
     </div>
   );

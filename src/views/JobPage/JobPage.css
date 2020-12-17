@@ -1,0 +1,38 @@
+.JobDetail{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: #e4f7fd61;
+	border: 2px solid #0786ada1;
+	border-radius: 8px;
+}
+
+.detail{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+#backtop a {
+	position: fixed;
+	bottom: 0px;
+	right: 30px; 
+	color: #333; 
+	z-index: 1000;
+	background-color: rgba(255,255,255,0.3);
+	
+	padding: 10px; 
+	border-radius: 4px; 
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-weight: normal; 
+	text-decoration: none;
+}
+
+#backtop a:hover {
+	background: SteelBlue; 
+	color: #fff; 
+}
+
