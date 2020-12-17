@@ -1,4 +1,4 @@
-.JobSearch {
+.JobView {
   padding: 30px;
   margin: 0 auto;
 }
@@ -13,28 +13,4 @@ article.job {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   text-align: left;
   color: black;
-  
-}
-
-.JobList{
-  background: #e4f7fd61;
-  border: 2px solid #0786ada1;
-  border-radius: 8px;
-  width: 95%;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding: 30px 50px
-}
-ul{
-  overflow: hidden;
-  margin-right: -20px;
-  margin-bottom: -20px;
-  margin-top: 0;
-  list-style:none
-}
-.JobList li{
-  float: left;
-  width: 370px;
-  margin-right: 60px;
-  margin-bottom: 20px;
 }

@@ -101,7 +101,7 @@ const PostJob = () => {
         </div>
         <div>
           <label className="labeName" htmlFor="fpTime">
-            Full/part Time*:{" "}
+            Full/Part Time*:{" "}
           </label>
           <input
             id="fpTime"
