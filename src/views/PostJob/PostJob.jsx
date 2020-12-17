@@ -191,7 +191,7 @@ const PostJob = () => {
                 </div>
 
                 <div>
-                    <button type="submit" onClick={submitForm}>Submit</button>
+                    <button className="postButton" type="submit" onClick={submitForm}>Submit</button>
                 </div>
             </form>
         </div>
