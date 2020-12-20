@@ -52,7 +52,9 @@ const JobPage = () => {
   // The component (page, in this case) contents.
   return (
     <div className="JobDetail">
-      <FloatingBack style={{ marginTop: "1.3rem" }} />
+      <div className="btn">
+        <FloatingBack style={{ marginTop: "1.3rem" }} />
+      </div>
 
       <section className="detail">
         {/* Render all the created job components after creating all the jobs */}
