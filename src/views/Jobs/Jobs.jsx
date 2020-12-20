@@ -4,13 +4,9 @@ import FloatingBack from "../../components/FloatingBack/FloatingBack";
 import { API_URL } from "../../index";
 
 const Jobs = () => {
-  const [jobs, setJobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasErrored, setHasErrored] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-
-  // Component State
-
   const [jobsComponents] = useState([]);
 
   // Get featured jobs from the server when the page loads
