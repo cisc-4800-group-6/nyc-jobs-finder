@@ -41,12 +41,16 @@ const Home = () => {
       </div>
 
       <div className="Home-buttons">
-        <div>
+        <div className="Home-buttons-top">
           <Link to="/jobs" className="button Home-button">
             Browse Jobs
           </Link>
 
-          <Link to="/jobs/post" className="button Home-button">
+          <Link
+            to="/jobs/post"
+            className="button Home-button"
+            style={{ marginLeft: "1.5rem" }}
+          >
             Post a Job
           </Link>
         </div>

@@ -1,11 +1,13 @@
-html{
-	background-color: #70bdd7;
+html {
+  background-color: #70bdd7;
 }
 
 .Home {
   padding: 2rem;
   background-image: url("../../assets/home.jpg");
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -32,9 +34,16 @@ html{
 }
 
 .Home-buttons {
-  margin: 8rem auto;
+  margin: 4rem auto;
   display: flex;
   flex-direction: column;
+}
+
+.Home-buttons-top {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto 0.25rem;
+  justify-content: space-between;
 }
 
 .Home-button {
@@ -43,4 +52,3 @@ html{
   margin-left: auto;
   margin-right: auto;
 }
-
