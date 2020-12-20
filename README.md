@@ -1,7 +1,8 @@
 # NYC Jobs Finder Frontend - CISC 4800 Group 6
 
 This is the frontend for the NYC Jobs Finder app.\
-See it live: [https://nyc-jobs-finder.netlify.app](https://nyc-jobs-finder.netlify.app/)
+See it live: [https://nyc-jobs-finder.netlify.app](https://nyc-jobs-finder.netlify.app/)\
+Accompanying backend: [https://github.com/cisc-4800-group-6/backend](https://github.com/cisc-4800-group-6/backend)
 
 Powered by:
 
