@@ -168,7 +168,7 @@ const JobPage = () => {
                 <button
                   className="button"
                   style={{
-                    margin: "3rem auto 0",
+                    margin: "8rem auto 0",
                     padding: "1rem 2rem",
                     fontSize: "1.25rem",
                     backgroundColor: "orange",
@@ -200,7 +200,7 @@ const JobPage = () => {
                 <button
                   className="button"
                   style={{
-                    margin: "3rem auto 0",
+                    margin: "8rem auto 0",
                     padding: "1rem 2rem",
                     fontSize: "1.25rem",
                   }}
@@ -243,6 +243,7 @@ const JobPage = () => {
                   fontSize: "1.25rem",
                   backgroundColor: "lightcoral",
                   border: "1px solid lightcoral",
+                  display: "none",
                 }}
                 onClick={() => {
                   fetch(`${API_URL}/job/${jobData["Job ID"]}`, {
