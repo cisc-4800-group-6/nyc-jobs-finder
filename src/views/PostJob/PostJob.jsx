@@ -55,6 +55,7 @@ const PostJob = () => {
   return (
     <div className="Postjob">
       <FloatingBack />
+
       <h1>Post a Job</h1>
       <form className="postForm" onSubmit={handleSubmit}>
         <div>

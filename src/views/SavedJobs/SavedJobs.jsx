@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FloatingBack from "../../components/FloatingBack/FloatingBack";
 import { API_URL } from "../../index";
-import "./SavedJobs.css";
 
 const SavedJobs = () => {
   const [jobs] = useState([]);
