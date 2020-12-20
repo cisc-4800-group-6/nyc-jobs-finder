@@ -5,7 +5,6 @@
 }
 
 .btn{
-	
 	margin: 0 auto;
 	padding-bottom: 50px;
 }
@@ -13,6 +12,7 @@
 .detail{
 	margin: 0 auto;
 	margin-top: 50px;
+	margin-bottom: 50px;
 	background: #e4f7fd61;
 	border: 2px solid #0786ada1;
 	border-radius: 8px;
