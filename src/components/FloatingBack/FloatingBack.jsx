@@ -3,7 +3,7 @@ import "./FloatingBack.css";
 
 const FloatingBack = (props) => {
   return (
-    <div className="FloatingBack" style={props.style}>
+    <div className="FloatingBack">
       <button
         className="button"
         style={{
