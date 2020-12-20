@@ -1,4 +1,5 @@
 import React from "react";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import "./FloatingBack.css";
 
 const FloatingBack = (props) => {
@@ -14,7 +15,9 @@ const FloatingBack = (props) => {
           window.history.back();
         }}
       >
-        {`<-- Back`}
+        <span className="FloatingBack-content">
+          <ArrowBackIcon /> Back
+        </span>
       </button>
     </div>
   );

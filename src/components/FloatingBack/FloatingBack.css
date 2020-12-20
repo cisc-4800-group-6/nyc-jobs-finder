@@ -3,3 +3,13 @@
   position: absolute;
   margin-top: 0.5rem;
 }
+
+.FloatingBack-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FloatingBack-content .MuiSvgIcon-root {
+  margin-right: 0.5rem;
+}
