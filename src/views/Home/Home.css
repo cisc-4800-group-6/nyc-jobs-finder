@@ -32,12 +32,15 @@ html{
 }
 
 .Home-buttons {
-  margin: 3rem auto 0;
+  margin: 10rem auto;
   display: flex;
   flex-direction: column;
-  justify-self: center;
 }
 
 .Home-button {
-  margin: 0 auto;
+  margin-bottom: 1rem;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
