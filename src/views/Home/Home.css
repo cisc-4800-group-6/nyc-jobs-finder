@@ -32,7 +32,7 @@ html{
 }
 
 .Home-buttons {
-  margin: 10rem auto;
+  margin: 8rem auto;
   display: flex;
   flex-direction: column;
 }
