@@ -55,8 +55,9 @@ const JobPage = () => {
       <div className="btn">
         <FloatingBack style={{ marginTop: "1.3rem" }} />
       </div>
-
-      <section className="detail">
+      
+      <div className="detail">
+      <section className="text">
         {/* Render all the created job components after creating all the jobs */}
         {isLoading ? (
           <p>Loading...</p>
@@ -275,6 +276,7 @@ const JobPage = () => {
           </p>
         )}
       </section>
+    </div>
     </div>
   );
 };
