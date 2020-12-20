@@ -41,23 +41,12 @@ const Home = () => {
       </div>
 
       <div className="Home-buttons">
-        <div
-          style={{
-            display: "flex",
-            maxWidth: "800px",
-            margin: "0 auto 1.25rem",
-            justifyContent: "space-between",
-          }}
-        >
+        <div>
           <Link to="/jobs" className="button Home-button">
             Browse Jobs
           </Link>
 
-          <Link
-            to="/jobs/post"
-            className="button Home-button"
-            style={{ marginLeft: "1.5rem" }}
-          >
+          <Link to="/jobs/post" className="button Home-button">
             Post a Job
           </Link>
         </div>
